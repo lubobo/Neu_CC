@@ -165,10 +165,6 @@ void getToken(Node *p_node){
             }
         else p_node=p_node->pNext;
     }
-    while(tokenList->data!=EOF){
-        cout<<tokenList->data<<endl;
-        tokenList=tokenList->next;
-    }
 }
 /********************************识别关键字模块*******************************/
 int scaner_key(int state){
@@ -202,9 +198,11 @@ int scaner_limit(int state){
 }
 /*********************************入链队操作**********************************/
 void insertList(tokenNode *list_node,int x){
+    cout<<x<<endl;
     node node_new=(node)malloc(sizeof(tokenNode));
     node_new->data=x;
     node_new->next=NULL;
     list_node->next=node_new;
     list_node=node_new;
+    cout<<list_node->data<<endl;
 }

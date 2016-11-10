@@ -32,9 +32,9 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="getToken.cpp" />
-		<Unit filename="getToken.h" />
-		<Unit filename="main.cpp" />
+		<Unit filename="headers/getToken.h" />
+		<Unit filename="src/getToken.cpp" />
+		<Unit filename="src/main.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />

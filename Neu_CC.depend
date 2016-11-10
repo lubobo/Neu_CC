@@ -1,0 +1,39 @@
+# depslib dependency file v1.0
+1478784515 source:/home/lukbob/program/c++/Neu_CC/main.cpp
+	<iostream>
+	<cstring>
+	<fstream>
+	<stdlib.h>
+	"getToken.h"
+
+1478785912 source:/home/lukbob/program/c++/Neu_CC/getToken.cpp
+	<iostream>
+	<cstring>
+	<fstream>
+	<stdlib.h>
+
+1478785758 /home/lukbob/program/c++/Neu_CC/getToken.h
+	<iostream>
+	<cstring>
+	<fstream>
+	<stdlib.h>
+
+1478787735 source:/home/lukbob/program/c++/Neu_CC/src/getToken.cpp
+	<iostream>
+	<cstring>
+	<fstream>
+	<stdlib.h>
+
+1478787496 source:/home/lukbob/program/c++/Neu_CC/src/main.cpp
+	<iostream>
+	<cstring>
+	<fstream>
+	<stdlib.h>
+	"../headers/getToken.h"
+
+1478787457 /home/lukbob/program/c++/Neu_CC/headers/getToken.h
+	<iostream>
+	<cstring>
+	<fstream>
+	<stdlib.h>
+

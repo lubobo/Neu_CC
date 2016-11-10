@@ -2,13 +2,13 @@
 #include <cstring>
 #include <fstream>
 #include <stdlib.h>
-#include "../headers/getToken.h"
+#include "getToken.h"
 using namespace std;
 int main(){
     fstream testFile;
     int i=0;
     testFile.open("test/test.txt",ios::in);
-    pNode pTail=NULL,pNew=NULL;
+    pNode pTail=NULL;
     pNode pHead=(pNode)malloc(sizeof(Node));
     pHead->data=0;
     pHead->pNext=NULL;
