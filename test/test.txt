@@ -2,17 +2,12 @@ int  main (void){
    int  a=1,d=2,c;
    int  x,y='1';
    char ch[4]="ok";
-   int  x_1=0;
-   if(a<=d){
-       c=a;
-       a=d;
-       d=c;
-    }
-    x++;
-    x--;
-    y+=x;
-    y-=x;
-    c=a+d;
-    printf("hello world!");
-    return 0; 
+   int  x_1=1.23;
+   x++;
+   y--;
+   x+=y;
+   y-=x;
+   printf("hello world");
+   return 0;
+   x->;
 }

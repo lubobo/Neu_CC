@@ -18,20 +18,20 @@
 	<fstream>
 	<stdlib.h>
 
-1478787735 source:/home/lukbob/program/c++/Neu_CC/src/getToken.cpp
+1478850882 source:/home/lukbob/program/c++/Neu_CC/src/getToken.cpp
 	<iostream>
 	<cstring>
 	<fstream>
 	<stdlib.h>
 
-1478787496 source:/home/lukbob/program/c++/Neu_CC/src/main.cpp
+1478787871 source:/home/lukbob/program/c++/Neu_CC/src/main.cpp
 	<iostream>
 	<cstring>
 	<fstream>
 	<stdlib.h>
 	"../headers/getToken.h"
 
-1478787457 /home/lukbob/program/c++/Neu_CC/headers/getToken.h
+1478850882 /home/lukbob/program/c++/Neu_CC/headers/getToken.h
 	<iostream>
 	<cstring>
 	<fstream>
