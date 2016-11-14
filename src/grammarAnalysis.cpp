@@ -66,19 +66,20 @@ void analysis(node tokenLists){
             c=List[b][l];
             if(c!=0&&c!=3&&c!=6){
                 table.pop();
-                cout<<"未压栈时:";
+                cout<<"栈内个数:";
                 cout<<table.size()<<endl;
                 char y;
                 for(int x=production[c].length()-1;x>=0;x--){
                     y=(char)(production[c][x]);
                     table.push(y);
-                    cout<<"栈内元素:";
+                    cout<<"压栈元素:";
                     cout<<x<<","<<production[c][x]<<endl;
                 }
-                cout<<"压栈之后:";
+                cout<<"栈内个数:";
                 cout<<table.size()<<endl;
                 cout<<endl;
             }else{
+                cout<<"压栈为空*"<<endl;
                 table.pop();
             }
         }else{

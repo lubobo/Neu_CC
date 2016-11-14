@@ -11,7 +11,6 @@ char *key[32]={
 char *limit[14]={">=","<=","==","=",">","<","+","-","++","+=","--","-=","->","."};               //定义界符集合
 char token[15];                                                                             //储存令牌字符
 int  sum;
-
 typedef struct Node{
     char data;
     struct Node *pNext;
@@ -21,13 +20,10 @@ typedef struct tokenNode{
     int data;
     struct tokenNode *next;
 }tokenNode, *node;
-
 /********************************识别token序列模块********************************/
 tokenNode * getToken(Node *p_node,node tokenNode){
     /***************链表节点初始化*****************/
-
     node insertNode=tokenNode;
-
     /**************函数声明******************/
     int scaner_key(int state);
     int scaner_limit(int state);

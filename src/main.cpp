@@ -15,7 +15,6 @@ int main(){
     pHead->data=0;
     pHead->pNext=NULL;
     pTail=pHead;
-
     while(!testFile.eof()){
         pNode p_new=(pNode)malloc(sizeof(Node));
         p_new->data=testFile.get();
@@ -32,16 +31,15 @@ int main(){
     tokenList=listHead;
     /**************************词法分析调用模块************************/
     node token_list=getToken(pHead->pNext,tokenList);
-
-    /*while(token_list){
+    /**************************语法分析调用模块************************/
+    analysis(token_list);
+    /**************************Token序列************************/
+    cout<<endl;
+    cout<<"Token序列"<<endl;
+    while(token_list){
         cout<<token_list->data<<endl;
         token_list=token_list->next;
     }
-    /**************************语法分析调用模块************************/
-    /*while(token_list){
-        token_list=token_list->next;
-    }
-    cout<<token_list<<endl;*/
-    analysis(token_list);
+
     return 0;
 }
