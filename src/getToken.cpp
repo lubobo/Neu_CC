@@ -8,7 +8,7 @@ char *key[32]={
     "signed","extern","register","static","volatile","void","if","else","switch","case","for","do","while",
     "goto","continue","break","default","sizeof","return"
 };                                                                                            //定义语言关键字集合
-char *limit[13]={">=","<=","==","=",">","<","+","++","+=","--","-=","->","."};               //定义界符集合
+char *limit[14]={">=","<=","==","=",">","<","+","-","++","+=","--","-=","->","."};               //定义界符集合
 char token[15];                                                                             //储存令牌字符
 int  sum;
 
@@ -23,18 +23,15 @@ typedef struct tokenNode{
 }tokenNode, *node;
 
 /********************************识别token序列模块********************************/
-void getToken(Node *p_node){
-    /***************链表初始化*****************/
-    node tokenList=NULL;
-    node listHead=(node)malloc(sizeof(tokenNode));
-    listHead->data=0;
-    listHead->next=NULL;
-    tokenList=listHead;
-    node insertNode=tokenList;
+tokenNode * getToken(Node *p_node,node tokenNode){
+    /***************链表节点初始化*****************/
+
+    node insertNode=tokenNode;
+
     /**************函数声明******************/
     int scaner_key(int state);
     int scaner_limit(int state);
-    void insertList(tokenNode *list_node,node p,int x);
+    void insertList(node p,int x);
     for(int j=0;j<10;j++){
         token[j]=NULL;
     }
@@ -48,7 +45,7 @@ void getToken(Node *p_node){
                 p_node=p_node->pNext;
             }
             token[m++]='\0';
-            insertList(tokenList,insertNode,scaner_key(4));
+            insertList(insertNode,scaner_key(4));
             insertNode=insertNode->next;
         }
     /***************扫描字符串****************/
@@ -59,7 +56,7 @@ void getToken(Node *p_node){
                     p_node=p_node->pNext;
                 }
                 token[m++]='\0';
-                insertList(tokenList,insertNode,1);
+                insertList(insertNode,1);
                 insertNode=insertNode->next;
                 p_node=p_node->pNext;
             }
@@ -71,7 +68,7 @@ void getToken(Node *p_node){
                     p_node=p_node->pNext;
                 }
                 token[m++]='\0';
-                insertList(tokenList,insertNode,2);
+                insertList(insertNode,2);
                 insertNode=insertNode->next;
                 p_node=p_node->pNext;
             }
@@ -90,7 +87,7 @@ void getToken(Node *p_node){
                     p_node=p_node->pNext;
                 }
                 token[m++]='\0';
-                insertList(tokenList,insertNode,3);
+                insertList(insertNode,3);
                 insertNode=insertNode->next;
             }
     /****************扫描界符****************/
@@ -100,61 +97,68 @@ void getToken(Node *p_node){
                     p_node=p_node->pNext;
                 }
                 token[m++]='\0';
-                insertList(tokenList,insertNode,scaner_limit(36));
+                insertList(insertNode,scaner_limit(36));
                 insertNode=insertNode->next;
             }
         else if(p_node->data=='['){
-                    insertList(tokenList,insertNode,49);
+                    insertList(insertNode,50);
                     insertNode=insertNode->next;
                     p_node=p_node->pNext;
             }
         else if(p_node->data==']'){
-                    insertList(tokenList,insertNode,50);
+                    insertList(insertNode,51);
                     insertNode=insertNode->next;
                     p_node=p_node->pNext;
             }
         else if(p_node->data=='{'){
-                    insertList(tokenList,insertNode,51);
+                    insertList(insertNode,52);
                     insertNode=insertNode->next;
                     p_node=p_node->pNext;
             }
         else if(p_node->data=='}'){
-                    insertList(tokenList,insertNode,52);
+                    insertList(insertNode,53);
                     insertNode=insertNode->next;
                     p_node=p_node->pNext;
             }
         else if(p_node->data=='('){
-                    insertList(tokenList,insertNode,53);
+                    insertList(insertNode,54);
                     insertNode=insertNode->next;
                     p_node=p_node->pNext;
             }
         else if(p_node->data==')'){
-                    insertList(tokenList,insertNode,54);
+                    insertList(insertNode,55);
                     insertNode=insertNode->next;
                     p_node=p_node->pNext;
             }
         else if(p_node->data==','){
-                    insertList(tokenList,insertNode,55);
+                    insertList(insertNode,56);
                     insertNode=insertNode->next;
                     p_node=p_node->pNext;
             }
         else if(p_node->data==';'){
-                    insertList(tokenList,insertNode,56);
+                    insertList(insertNode,57);
+                    insertNode=insertNode->next;
+                    p_node=p_node->pNext;
+            }
+        else if(p_node->data=='/'){
+                    insertList(insertNode,58);
+                    insertNode=insertNode->next;
+                    p_node=p_node->pNext;
+            }
+        else if(p_node->data=='*'){
+                    insertList(insertNode,59);
                     insertNode=insertNode->next;
                     p_node=p_node->pNext;
             }
         else if(p_node->data=='#'){
-                    insertList(tokenList,insertNode,57);
+                    insertList(insertNode,60);
                     insertNode=insertNode->next;
                     p_node=p_node->pNext;
             }
         else p_node=p_node->pNext;
     }
-    tokenList=tokenList->next;
-    while(tokenList){
-        cout<<tokenList->data<<endl;;
-        tokenList=tokenList->next;
-    }
+    tokenNode=tokenNode->next;
+    return tokenNode;
 }
 /********************************识别关键字模块*******************************/
 int scaner_key(int state){
@@ -172,7 +176,7 @@ int scaner_key(int state){
 }
 /********************************识别界符模块********************************/
 int scaner_limit(int state){
-    for(int i=0;i<13;i++){
+    for(int i=0;i<14;i++){
         if(strcmp(token,limit[i])==0){
             sum=state+i;
         }
@@ -180,7 +184,7 @@ int scaner_limit(int state){
     return sum;
 }
 /*********************************入链队操作**********************************/
-void insertList(tokenNode *list_node,node p,int x){
+void insertList(node p,int x){
     node node_new=(node)malloc(sizeof(tokenNode));
     node_new->data=x;
     node_new->next=NULL;

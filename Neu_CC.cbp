@@ -32,8 +32,10 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="headers/gammarAnalysis.h" />
 		<Unit filename="headers/getToken.h" />
 		<Unit filename="src/getToken.cpp" />
+		<Unit filename="src/grammarAnalysis.cpp" />
 		<Unit filename="src/main.cpp" />
 		<Extensions>
 			<code_completion />

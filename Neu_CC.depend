@@ -18,20 +18,35 @@
 	<fstream>
 	<stdlib.h>
 
-1478850882 source:/home/lukbob/program/c++/Neu_CC/src/getToken.cpp
+1478873993 source:/home/lukbob/program/c++/Neu_CC/src/getToken.cpp
 	<iostream>
 	<cstring>
 	<fstream>
 	<stdlib.h>
 
-1478787871 source:/home/lukbob/program/c++/Neu_CC/src/main.cpp
+1479090428 source:/home/lukbob/program/c++/Neu_CC/src/main.cpp
 	<iostream>
 	<cstring>
 	<fstream>
 	<stdlib.h>
 	"../headers/getToken.h"
+	"../headers/gammarAnalysis.h"
 
-1478850882 /home/lukbob/program/c++/Neu_CC/headers/getToken.h
+1478871092 /home/lukbob/program/c++/Neu_CC/headers/getToken.h
+	<iostream>
+	<cstring>
+	<fstream>
+	<stdlib.h>
+
+1479118385 source:/home/lukbob/program/c++/Neu_CC/src/grammarAnalysis.cpp
+	<iostream>
+	<cstring>
+	<fstream>
+	<stdlib.h>
+	<stack>
+	<map>
+
+1479087704 /home/lukbob/program/c++/Neu_CC/headers/gammarAnalysis.h
 	<iostream>
 	<cstring>
 	<fstream>
