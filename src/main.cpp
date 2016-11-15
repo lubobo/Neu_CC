@@ -4,12 +4,14 @@
 #include <stdlib.h>
 #include "../headers/getToken.h"
 #include "../headers/gammarAnalysis.h"
+#include "../headers/recursiveAnalysis.h"
 using namespace std;
+node p;
 int main(){
     fstream testFile;
     int i=0;
     testFile.open("test/hello.txt",ios::in);
-    /***************************存储源码链表初始化****************************/
+    /**************************存储源码链表初始化**********************/
     pNode pTail=NULL,pNew=NULL;
     pNode pHead=(pNode)malloc(sizeof(Node));
     pHead->data=0;
@@ -23,7 +25,7 @@ int main(){
         pTail=p_new;
     }
     testFile.close();
-    /**************************存储token序列链表初始化************************/
+    /************************存储token序列链表初始化*******************/
     node tokenList=NULL;
     node listHead=(node)malloc(sizeof(tokenNode));
     listHead->data=0;
@@ -32,14 +34,17 @@ int main(){
     /**************************词法分析调用模块************************/
     node token_list=getToken(pHead->pNext,tokenList);
     /**************************语法分析调用模块************************/
+    /***********LL(1)分析方法*********/
     analysis(token_list);
-    /**************************Token序列************************/
+    /***********递归下降自程序*********/
+    p=token_list;
+    recursive();
+    /**************************Token序列*****************************/
     cout<<endl;
-    cout<<"Token序列"<<endl;
+    cout<<"Token序列:"<<endl;
     while(token_list){
         cout<<token_list->data<<endl;
         token_list=token_list->next;
     }
-
     return 0;
 }

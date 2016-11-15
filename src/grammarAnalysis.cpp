@@ -29,7 +29,7 @@ void analysis(node tokenLists){
     production[6]="";
     production[7]="i";
     production[8]="(E)";
-    stack<char> table;
+    stack<char>table;
     table.push('#');
     table.push('E');
     int a,b,c,l;
@@ -86,13 +86,14 @@ void analysis(node tokenLists){
             break;
         }
     }
-    if(swapToken(tokenLists->data)=='#'){
+    if(swapToken(tokenLists->data)=='#'&&table.top()=='#'){
         cout<<endl;
-        cout<<"The last result is:"<<endl;
+        cout<<"The analysis result is:"<<endl;
         cout<<"YES"<<endl;
+        cout<<endl;
     }else{
         cout<<endl;
-        cout<<"The last result is:"<<endl;
+        cout<<"The analysis result is:"<<endl;
         cout<<"NO"<<endl;
     }
 }

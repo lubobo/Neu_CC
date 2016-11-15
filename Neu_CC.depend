@@ -24,13 +24,14 @@
 	<fstream>
 	<stdlib.h>
 
-1479119054 source:/home/lukbob/program/c++/Neu_CC/src/main.cpp
+1479175679 source:/home/lukbob/program/c++/Neu_CC/src/main.cpp
 	<iostream>
 	<cstring>
 	<fstream>
 	<stdlib.h>
 	"../headers/getToken.h"
 	"../headers/gammarAnalysis.h"
+	"../headers/recursiveAnalysis.h"
 
 1478871092 /home/lukbob/program/c++/Neu_CC/headers/getToken.h
 	<iostream>
@@ -38,7 +39,7 @@
 	<fstream>
 	<stdlib.h>
 
-1479118677 source:/home/lukbob/program/c++/Neu_CC/src/grammarAnalysis.cpp
+1479175590 source:/home/lukbob/program/c++/Neu_CC/src/grammarAnalysis.cpp
 	<iostream>
 	<cstring>
 	<fstream>
@@ -47,6 +48,15 @@
 	<map>
 
 1479087704 /home/lukbob/program/c++/Neu_CC/headers/gammarAnalysis.h
+	<iostream>
+	<cstring>
+	<fstream>
+	<stdlib.h>
+
+1479175590 source:/home/lukbob/program/c++/Neu_CC/src/recursiveAnalysis.cpp
+	<iostream>
+
+1479174756 /home/lukbob/program/c++/Neu_CC/headers/recursiveAnalysis.h
 	<iostream>
 	<cstring>
 	<fstream>
