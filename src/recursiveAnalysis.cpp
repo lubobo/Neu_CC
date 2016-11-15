@@ -6,19 +6,23 @@ typedef struct tokenNode{
 }tokenNode, *node;
 extern node p;
 char w;
-void recursive(){
+int a=0;
+int recursive(){
     void next();
     void E();
     next();
     E();
-    if(w=='#'){
+    if(w=='#'&&a!=1){
         cout<<endl;
-        cout<<"The analysis result is:"<<endl;
-        cout<<"YES"<<endl;
+        cout<<"The recursiveAnalysis result is:"<<endl;
+        cout<<"Right"<<endl;
+        cout<<endl;
     }else{
         cout<<endl;
-        cout<<"The analysis result is:"<<endl;
-        cout<<"NO0"<<endl;
+        cout<<"The recursiveAnalysis result is:"<<endl;
+        cout<<"Warning0"<<endl;
+        cout<<endl;
+        return 0;
     }
 }
 void E(){
@@ -33,7 +37,7 @@ cout<<"E"<<endl;
 }
 void T(){
 cout<<"T"<<endl;
-    void F();
+    int F();
     void next();
     F();
     if(w=='x'){
@@ -53,20 +57,25 @@ cout<<"F"<<endl;
         if(w==')'){
             next();
         }else{
+            a=1;
             cout<<endl;
-            cout<<"The analysis result is:"<<endl;
-            cout<<"NO2"<<endl;
+            cout<<"The recursiveAnalysis result is:"<<endl;
+            cout<<"Warning2"<<endl;
+            cout<<endl;
         }
     }else{
+        a=1;
         cout<<endl;
-        cout<<"The analysis result is:"<<endl;
-        cout<<"NO1"<<endl;
+        cout<<"The recursiveAnalysis result is:"<<endl;
+        cout<<"Warning1"<<endl;
+        cout<<endl;
     }
 }
 void next(){
     char swapToken(int x);
     w=swapToken(p->data);
     p=p->next;
+
 }
 char swapValue(int x){
     if(x==0||x==3){

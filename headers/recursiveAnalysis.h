@@ -6,5 +6,5 @@
 #include <stdlib.h>
 using namespace std;
 extern node p;
-void recursive();
+int recursive();
 #endif

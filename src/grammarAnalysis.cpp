@@ -88,13 +88,13 @@ void analysis(node tokenLists){
     }
     if(swapToken(tokenLists->data)=='#'&&table.top()=='#'){
         cout<<endl;
-        cout<<"The analysis result is:"<<endl;
-        cout<<"YES"<<endl;
+        cout<<"The grammarAnalysis result is:"<<endl;
+        cout<<"Right"<<endl;
         cout<<endl;
     }else{
         cout<<endl;
-        cout<<"The analysis result is:"<<endl;
-        cout<<"NO"<<endl;
+        cout<<"The grammarAnalysis result is:"<<endl;
+        cout<<"Warning"<<endl;
     }
 }
 char swapToken(int x){

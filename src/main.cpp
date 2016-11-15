@@ -40,7 +40,6 @@ int main(){
     p=token_list;
     recursive();
     /**************************Token序列*****************************/
-    cout<<endl;
     cout<<"Token序列:"<<endl;
     while(token_list){
         cout<<token_list->data<<endl;
