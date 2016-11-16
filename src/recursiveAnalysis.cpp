@@ -12,12 +12,12 @@ int recursive(){
     void E();
     next();
     E();
-    if(w=='#'&&a!=1){
+    if(w=='#'&&a!=1&&a!=2){
         cout<<endl;
         cout<<"The recursiveAnalysis result is:"<<endl;
         cout<<"Right"<<endl;
         cout<<endl;
-    }else{
+    }else if(w!='#'){
         cout<<endl;
         cout<<"The recursiveAnalysis result is:"<<endl;
         cout<<"Warning0"<<endl;
@@ -30,7 +30,7 @@ cout<<"E"<<endl;
     void T();
     void next();
     T();
-    if(w=='w'){
+    if(w=='w'&&a!=1){
         next();
         T();
     }
@@ -40,21 +40,21 @@ cout<<"T"<<endl;
     int F();
     void next();
     F();
-    if(w=='x'){
+    if(w=='x'&&a!=1){
         next();
         F();
     }
 }
-void F(){
+int F(){
 cout<<"F"<<endl;
     void E();
     void next();
-    if(w=='i'){
+    if(w=='i'&&a!=1){
         next();
     }else if(w=='('){
         next();
         E();
-        if(w==')'){
+        if(w==')'&&a!=1&&a!=2){
             next();
         }else{
             a=1;
@@ -62,13 +62,15 @@ cout<<"F"<<endl;
             cout<<"The recursiveAnalysis result is:"<<endl;
             cout<<"Warning2"<<endl;
             cout<<endl;
+            return 0;
         }
-    }else{
-        a=1;
+    }else if(a!=1&&a!=2){
+        a=2;
         cout<<endl;
         cout<<"The recursiveAnalysis result is:"<<endl;
         cout<<"Warning1"<<endl;
         cout<<endl;
+        return 0;
     }
 }
 void next(){

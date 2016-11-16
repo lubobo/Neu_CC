@@ -95,6 +95,7 @@ void analysis(node tokenLists){
         cout<<endl;
         cout<<"The grammarAnalysis result is:"<<endl;
         cout<<"Warning"<<endl;
+        cout<<endl;
     }
 }
 char swapToken(int x){
