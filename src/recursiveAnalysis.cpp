@@ -30,7 +30,7 @@ cout<<"E"<<endl;
     void T();
     void next();
     T();
-    if(w=='w'&&a!=1){
+    if(w=='w'&&a!=1&&a!=2){
         next();
         T();
     }
@@ -40,7 +40,7 @@ cout<<"T"<<endl;
     int F();
     void next();
     F();
-    if(w=='x'&&a!=1){
+    if(w=='x'&&a!=1&&a!=2){
         next();
         F();
     }
@@ -49,7 +49,7 @@ int F(){
 cout<<"F"<<endl;
     void E();
     void next();
-    if(w=='i'&&a!=1){
+    if(w=='i'&&a!=1&&a!=2){
         next();
     }else if(w=='('){
         next();
