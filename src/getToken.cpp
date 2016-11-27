@@ -18,6 +18,7 @@ typedef struct Node{
 
 typedef struct tokenNode{
     int data;
+    char tokens;
     struct tokenNode *next;
 }tokenNode, *node;
 /********************************识别token序列模块********************************/
@@ -27,7 +28,7 @@ tokenNode * getToken(Node *p_node,node tokenNode){
     /**************函数声明******************/
     int scaner_key(int state);
     int scaner_limit(int state);
-    void insertList(node p,int x);
+    void insertList(node p,int x,char y);
     for(int j=0;j<10;j++){
         token[j]=NULL;
     }
@@ -41,7 +42,7 @@ tokenNode * getToken(Node *p_node,node tokenNode){
                 p_node=p_node->pNext;
             }
             token[m++]='\0';
-            insertList(insertNode,scaner_key(4));
+            insertList(insertNode,scaner_key(4),*token);
             insertNode=insertNode->next;
         }
     /***************扫描字符串****************/
@@ -52,7 +53,7 @@ tokenNode * getToken(Node *p_node,node tokenNode){
                     p_node=p_node->pNext;
                 }
                 token[m++]='\0';
-                insertList(insertNode,1);
+                insertList(insertNode,1,*token);
                 insertNode=insertNode->next;
                 p_node=p_node->pNext;
             }
@@ -64,7 +65,7 @@ tokenNode * getToken(Node *p_node,node tokenNode){
                     p_node=p_node->pNext;
                 }
                 token[m++]='\0';
-                insertList(insertNode,2);
+                insertList(insertNode,2,*token);
                 insertNode=insertNode->next;
                 p_node=p_node->pNext;
             }
@@ -83,7 +84,7 @@ tokenNode * getToken(Node *p_node,node tokenNode){
                     p_node=p_node->pNext;
                 }
                 token[m++]='\0';
-                insertList(insertNode,3);
+                insertList(insertNode,3,*token);
                 insertNode=insertNode->next;
             }
     /****************扫描界符****************/
@@ -93,63 +94,63 @@ tokenNode * getToken(Node *p_node,node tokenNode){
                     p_node=p_node->pNext;
                 }
                 token[m++]='\0';
-                insertList(insertNode,scaner_limit(36));
+                insertList(insertNode,scaner_limit(36),*token);
                 insertNode=insertNode->next;
             }
         else if(p_node->data=='['){
-                    insertList(insertNode,50);
-                    insertNode=insertNode->next;
-                    p_node=p_node->pNext;
+                insertList(insertNode,50,'[');
+                insertNode=insertNode->next;
+                p_node=p_node->pNext;
             }
         else if(p_node->data==']'){
-                    insertList(insertNode,51);
-                    insertNode=insertNode->next;
-                    p_node=p_node->pNext;
+                insertList(insertNode,51,']');
+                insertNode=insertNode->next;
+                p_node=p_node->pNext;
             }
         else if(p_node->data=='{'){
-                    insertList(insertNode,52);
-                    insertNode=insertNode->next;
-                    p_node=p_node->pNext;
+                insertList(insertNode,52,'{');
+                insertNode=insertNode->next;
+                p_node=p_node->pNext;
             }
         else if(p_node->data=='}'){
-                    insertList(insertNode,53);
-                    insertNode=insertNode->next;
-                    p_node=p_node->pNext;
+                insertList(insertNode,53,'}');
+                insertNode=insertNode->next;
+                p_node=p_node->pNext;
             }
         else if(p_node->data=='('){
-                    insertList(insertNode,54);
-                    insertNode=insertNode->next;
-                    p_node=p_node->pNext;
+                insertList(insertNode,54,'(');
+                insertNode=insertNode->next;
+                p_node=p_node->pNext;
             }
         else if(p_node->data==')'){
-                    insertList(insertNode,55);
-                    insertNode=insertNode->next;
-                    p_node=p_node->pNext;
+                insertList(insertNode,55,')');
+                insertNode=insertNode->next;
+                p_node=p_node->pNext;
             }
         else if(p_node->data==','){
-                    insertList(insertNode,56);
-                    insertNode=insertNode->next;
-                    p_node=p_node->pNext;
+                insertList(insertNode,56,',');
+                insertNode=insertNode->next;
+                p_node=p_node->pNext;
             }
         else if(p_node->data==';'){
-                    insertList(insertNode,57);
-                    insertNode=insertNode->next;
-                    p_node=p_node->pNext;
-            }
-        else if(p_node->data=='/'){
-                    insertList(insertNode,58);
-                    insertNode=insertNode->next;
-                    p_node=p_node->pNext;
+                insertList(insertNode,57,';');
+                insertNode=insertNode->next;
+                p_node=p_node->pNext;
             }
         else if(p_node->data=='*'){
-                    insertList(insertNode,59);
-                    insertNode=insertNode->next;
-                    p_node=p_node->pNext;
+                insertList(insertNode,58,'*');
+                insertNode=insertNode->next;
+                p_node=p_node->pNext;
+            }
+        else if(p_node->data=='/'){
+                insertList(insertNode,59,'/');
+                insertNode=insertNode->next;
+                p_node=p_node->pNext;
             }
         else if(p_node->data=='#'){
-                    insertList(insertNode,60);
-                    insertNode=insertNode->next;
-                    p_node=p_node->pNext;
+                insertList(insertNode,60,'#');
+                insertNode=insertNode->next;
+                p_node=p_node->pNext;
             }
         else p_node=p_node->pNext;
     }
@@ -180,9 +181,10 @@ int scaner_limit(int state){
     return sum;
 }
 /*********************************入链队操作**********************************/
-void insertList(node p,int x){
+void insertList(node p,int x,char y){
     node node_new=(node)malloc(sizeof(tokenNode));
     node_new->data=x;
+    node_new->tokens=y;
     node_new->next=NULL;
     p->next=node_new;
     p=node_new;

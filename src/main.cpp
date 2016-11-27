@@ -36,17 +36,17 @@ int main(){
     node token_list=getToken(pHead->pNext,tokenList);
     /**************************语法分析调用模块************************/
     /***********LL(1)分析方法*********/
-    analysis(token_list);
+    //analysis(token_list);
     /***********递归下降自程序*********/
     p=token_list;
-    recursive();
+    //recursive();
     /**************************语义分析调用模块************************/
-    LLTranslating(token_list);
+    LLTranslating();
     /**************************Token序列*****************************/
     /*cout<<"Token序列:"<<endl;
     while(token_list){
-        cout<<token_list->data<<endl;
+        cout<<token_list->tokens<<endl;
         token_list=token_list->next;
-    }
-    return 0;*/
+    }*/
+    return 0;
 }

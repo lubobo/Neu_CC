@@ -5,5 +5,6 @@
 #include <fstream>
 #include <stdlib.h>
 using namespace std;
-void LLTranslating(node tokenLists);
+extern node p;
+void LLTranslating();
 #endif

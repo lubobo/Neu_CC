@@ -11,6 +11,7 @@ typedef struct Node{
 }Node, *pNode;
 typedef struct tokenNode{
     int data;
+    char tokens;
     struct tokenNode *next;
 }tokenNode, *node;
 tokenNode * getToken(Node *p_node,node tokenNode);
