@@ -100,32 +100,32 @@ void GEQ1(){
     sem.pop();
     char m=sem.top();
     sem.pop();
-    cout<<'('<<'+'<<'\t'<<m<<'\t'<<n<<'\t'<<n+m<<')'<<endl;
-    sem.push((char)(n+m));
+    cout<<'('<<'+'<<'\t'<<m<<'\t'<<n<<'\t'<<m+n<<')'<<endl;
+    sem.push((char)(m+n));
 }
 void GEQ2(){
     char n=sem.top();
     sem.pop();
     char m=sem.top();
     sem.pop();
-    cout<<'('<<'-'<<'\t'<<m<<'\t'<<n<<'\t'<<n-m<<')'<<endl;
-    sem.push((char)(n-m));
+    cout<<'('<<'-'<<'\t'<<m<<'\t'<<n<<'\t'<<m-n<<')'<<endl;
+    sem.push((char)(m-n));
 }
 void GEQ3(){
     char n=sem.top();
     sem.pop();
     char m=sem.top();
     sem.pop();
-    cout<<'('<<'*'<<'\t'<<m<<'\t'<<n<<'\t'<<n*m<<')'<<endl;
-    sem.push((char)(n*m));
+    cout<<'('<<'*'<<'\t'<<m<<'\t'<<n<<'\t'<<m*n<<')'<<endl;
+    sem.push((char)(m*n));
 }
 void GEQ4(){
     char n=sem.top();
     sem.pop();
     char m=sem.top();
     sem.pop();
-    cout<<'('<<'/'<<'\t'<<m<<'\t'<<n<<'\t'<<n/m<<')'<<endl;
-    sem.push((char)(n/m));
+    cout<<'('<<'/'<<'\t'<<m<<'\t'<<n<<'\t'<<m/n<<')'<<endl;
+    sem.push((char)(m/n));
 }
 char swapKey(int x){
     if(x==0||x==3){

@@ -47,6 +47,7 @@ int main(){
     /***********递归下降自程序*********/
     reTranslating();
     /**************************Token序列*****************************/
+    cout<<endl;
     cout<<"Token序列:"<<endl;
     while(token_list){
         cout<<token_list->tokens;
