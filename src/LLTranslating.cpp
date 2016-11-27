@@ -80,7 +80,7 @@ void LLTranslating(){
             GEQ4();
             table.pop();
         }else if(table.top()=='0'){
-            sem.push(ter);
+            sem.push(p->tokens);
             table.pop();
         }else if(table.top()==ter){
             p=p->next;
@@ -100,32 +100,32 @@ void GEQ1(){
     sem.pop();
     char m=sem.top();
     sem.pop();
-    cout<<'('<<'+'<<'\t'<<n<<'\t'<<m<<'\t'<<n+m<<')'<<endl;
-    sem.push(n+m);
+    cout<<'('<<'+'<<'\t'<<m<<'\t'<<n<<'\t'<<n+m<<')'<<endl;
+    sem.push((char)(n+m));
 }
 void GEQ2(){
     char n=sem.top();
     sem.pop();
     char m=sem.top();
     sem.pop();
-    cout<<'('<<'-'<<'\t'<<n<<'\t'<<m<<'\t'<<n-m<<')'<<endl;
-    sem.push(n-m);
+    cout<<'('<<'-'<<'\t'<<m<<'\t'<<n<<'\t'<<n-m<<')'<<endl;
+    sem.push((char)(n-m));
 }
 void GEQ3(){
     char n=sem.top();
     sem.pop();
     char m=sem.top();
     sem.pop();
-    cout<<'('<<'*'<<'\t'<<n<<'\t'<<m<<'\t'<<n*m<<')'<<endl;
-    sem.push(n*m);
+    cout<<'('<<'*'<<'\t'<<m<<'\t'<<n<<'\t'<<n*m<<')'<<endl;
+    sem.push((char)(n*m));
 }
 void GEQ4(){
     char n=sem.top();
     sem.pop();
     char m=sem.top();
     sem.pop();
-    cout<<'('<<'/'<<'\t'<<n<<'\t'<<m<<'\t'<<n/m<<')'<<endl;
-    sem.push(n/m);
+    cout<<'('<<'/'<<'\t'<<m<<'\t'<<n<<'\t'<<n/m<<')'<<endl;
+    sem.push((char)(n/m));
 }
 char swapKey(int x){
     if(x==0||x==3){

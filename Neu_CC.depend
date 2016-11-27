@@ -24,7 +24,7 @@
 	<fstream>
 	<stdlib.h>
 
-1480230189 source:/home/lukbob/program/c++/Neu_CC/src/main.cpp
+1480240047 source:/home/lukbob/program/c++/Neu_CC/src/main.cpp
 	<iostream>
 	<cstring>
 	<fstream>
@@ -33,6 +33,7 @@
 	"../headers/gammarAnalysis.h"
 	"../headers/recursiveAnalysis.h"
 	"../headers/LLTranslating.h"
+	"../headers/reTranslating.h"
 
 1480229701 /home/lukbob/program/c++/Neu_CC/headers/getToken.h
 	<iostream>
@@ -63,7 +64,7 @@
 	<fstream>
 	<stdlib.h>
 
-1480232270 source:/home/lukbob/program/c++/Neu_CC/src/LLTranslating.cpp
+1480239552 source:/home/lukbob/program/c++/Neu_CC/src/LLTranslating.cpp
 	<iostream>
 	<cstring>
 	<fstream>
@@ -76,4 +77,18 @@
 	<cstring>
 	<fstream>
 	<stdlib.h>
+
+1480234453 /home/lukbob/program/c++/Neu_CC/headers/reTranslating.h
+	<iostream>
+	<cstring>
+	<fstream>
+	<stdlib.h>
+
+1480240544 source:/home/lukbob/program/c++/Neu_CC/src/reTranslating.cpp
+	<iostream>
+	<cstring>
+	<fstream>
+	<stdlib.h>
+	<stack>
+	<map>
 

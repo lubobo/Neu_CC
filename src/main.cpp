@@ -6,6 +6,7 @@
 #include "../headers/gammarAnalysis.h"
 #include "../headers/recursiveAnalysis.h"
 #include "../headers/LLTranslating.h"
+#include "../headers/reTranslating.h"
 using namespace std;
 node p;
 int main(){
@@ -41,12 +42,15 @@ int main(){
     p=token_list;
     //recursive();
     /**************************语义分析调用模块************************/
-    LLTranslating();
+    /***********LL(1)分析方法*********/
+    //LLTranslating();
+    /***********递归下降自程序*********/
+    reTranslating();
     /**************************Token序列*****************************/
-    /*cout<<"Token序列:"<<endl;
+    cout<<"Token序列:"<<endl;
     while(token_list){
-        cout<<token_list->tokens<<endl;
+        cout<<token_list->tokens;
         token_list=token_list->next;
-    }*/
+    }
     return 0;
 }
