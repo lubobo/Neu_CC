@@ -9,9 +9,14 @@ typedef struct Node{
     char data;
     struct Node *pNext;
 }Node, *pNode;
+
+typedef struct stringToken{
+    char tokens[15];
+}stringToken, *stringT;
+
 typedef struct tokenNode{
     int data;
-    char tokens;
+    stringT token;
     struct tokenNode *next;
 }tokenNode, *node;
 tokenNode * getToken(Node *p_node,node tokenNode);

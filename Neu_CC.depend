@@ -18,13 +18,13 @@
 	<fstream>
 	<stdlib.h>
 
-1480229701 source:/home/lukbob/program/c++/Neu_CC/src/getToken.cpp
+1480301228 source:/home/lukbob/program/c++/Neu_CC/src/getToken.cpp
 	<iostream>
 	<cstring>
 	<fstream>
 	<stdlib.h>
 
-1480248967 source:/home/lukbob/program/c++/Neu_CC/src/main.cpp
+1480304013 source:/home/lukbob/program/c++/Neu_CC/src/main.cpp
 	<iostream>
 	<cstring>
 	<fstream>
@@ -35,7 +35,7 @@
 	"../headers/LLTranslating.h"
 	"../headers/reTranslating.h"
 
-1480229701 /home/lukbob/program/c++/Neu_CC/headers/getToken.h
+1480301255 /home/lukbob/program/c++/Neu_CC/headers/getToken.h
 	<iostream>
 	<cstring>
 	<fstream>
@@ -64,7 +64,7 @@
 	<fstream>
 	<stdlib.h>
 
-1480245970 source:/home/lukbob/program/c++/Neu_CC/src/LLTranslating.cpp
+1480304206 source:/home/lukbob/program/c++/Neu_CC/src/LLTranslating.cpp
 	<iostream>
 	<cstring>
 	<fstream>
@@ -78,13 +78,13 @@
 	<fstream>
 	<stdlib.h>
 
-1480234453 /home/lukbob/program/c++/Neu_CC/headers/reTranslating.h
+1480251214 /home/lukbob/program/c++/Neu_CC/headers/reTranslating.h
 	<iostream>
 	<cstring>
 	<fstream>
 	<stdlib.h>
 
-1480248400 source:/home/lukbob/program/c++/Neu_CC/src/reTranslating.cpp
+1480303195 source:/home/lukbob/program/c++/Neu_CC/src/reTranslating.cpp
 	<iostream>
 	<cstring>
 	<fstream>

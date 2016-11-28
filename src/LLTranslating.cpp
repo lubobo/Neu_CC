@@ -5,9 +5,12 @@
 #include <stack>
 #include <map>
 using namespace std;
+typedef struct stringToken{
+    char tokens[15];
+}stringToken, *stringT;
 typedef struct tokenNode{
     int data;
-    char tokens;
+    stringT token;
     struct tokenNode *next;
 }tokenNode, *node;
 extern node p;
@@ -21,7 +24,8 @@ int lists[5][8]={
 };
 int Ter,Non,gra;
 stack<char>table;
-stack<char>sem;
+stack<string>sem;
+char x='1';
 void LLTranslating(){
     char swapKey(int x);
     void GEQ1();
@@ -69,18 +73,22 @@ void LLTranslating(){
             }
         }else if(table.top()=='1'){
             GEQ1();
+            x++;
             table.pop();
         }else if(table.top()=='2'){
             GEQ2();
+            x++;
             table.pop();
         }else if(table.top()=='3'){
             GEQ3();
+            x++;
             table.pop();
         }else if(table.top()=='4'){
             GEQ4();
+            x++;
             table.pop();
         }else if(table.top()=='0'){
-            sem.push(p->tokens);
+            sem.push((string)(p->token->tokens));
             table.pop();
         }else if(table.top()==ter){
             p=p->next;
@@ -96,36 +104,40 @@ void LLTranslating(){
     }
 }
 void GEQ1(){
-    char n=sem.top();
+    string n=sem.top();
     sem.pop();
-    char m=sem.top();
+    string m=sem.top();
     sem.pop();
-    cout<<'('<<'+'<<'\t'<<m<<'\t'<<n<<'\t'<<m+n<<')'<<endl;
-    sem.push((char)(m+n));
+    cout<<'('<<'+'<<'\t'<<m<<'\t'<<n<<'\t'<<"t"<<x<<')'<<endl;
+    char t[3]={'t',x,'\0'};
+    sem.push((string)(t));
 }
 void GEQ2(){
-    char n=sem.top();
+    string n=sem.top();
     sem.pop();
-    char m=sem.top();
+    string m=sem.top();
     sem.pop();
-    cout<<'('<<'-'<<'\t'<<m<<'\t'<<n<<'\t'<<m-n<<')'<<endl;
-    sem.push((char)(m-n));
+    cout<<'('<<'-'<<'\t'<<m<<'\t'<<n<<'\t'<<"t"<<x<<')'<<endl;
+    char t[3]={'t',x,'\0'};
+    sem.push((string)(t));
 }
 void GEQ3(){
-    char n=sem.top();
+    string n=sem.top();
     sem.pop();
-    char m=sem.top();
+    string m=sem.top();
     sem.pop();
-    cout<<'('<<'*'<<'\t'<<m<<'\t'<<n<<'\t'<<m*n<<')'<<endl;
-    sem.push((char)(m*n));
+    cout<<'('<<'*'<<'\t'<<m<<'\t'<<n<<'\t'<<"t"<<x<<')'<<endl;
+    char t[3]={'t',x,'\0'};
+    sem.push((string)(t));
 }
 void GEQ4(){
-    char n=sem.top();
+    string n=sem.top();
     sem.pop();
-    char m=sem.top();
+    string m=sem.top();
     sem.pop();
-    cout<<'('<<'/'<<'\t'<<m<<'\t'<<n<<'\t'<<m/n<<')'<<endl;
-    sem.push((char)(m/n));
+    cout<<'('<<'/'<<'\t'<<m<<'\t'<<n<<'\t'<<"t"<<x<<')'<<endl;
+    char t[3]={'t',x,'\0'};
+    sem.push((string)(t));
 }
 char swapKey(int x){
     if(x==0||x==3){

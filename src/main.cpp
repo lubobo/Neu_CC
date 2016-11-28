@@ -38,19 +38,19 @@ int main(){
     /**************************语法分析调用模块************************/
     /***********LL(1)分析方法*********/
     //analysis(token_list);
-    /***********递归下降自程序*********/
+    /***********递归下降子程序*********/
     p=token_list;
     //recursive();
     /**************************语义分析调用模块************************/
     /***********LL(1)分析方法*********/
-    //LLTranslating();
-    /***********递归下降自程序*********/
-    reTranslating();
+    LLTranslating();
+    /***********递归下降子程序*********/
+    //reTranslating();
     /**************************Token序列*****************************/
     cout<<endl;
-    cout<<"Token序列:"<<endl;
+    cout<<"识别的序列:"<<endl;
     while(token_list){
-        cout<<token_list->tokens;
+        cout<<token_list->token->tokens;
         token_list=token_list->next;
     }
     return 0;
