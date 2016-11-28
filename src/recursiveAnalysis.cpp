@@ -1,7 +1,12 @@
 #include <iostream>
 using namespace std;
+extern int wrong;
+typedef struct stringToken{
+    char tokens[15];
+}stringToken, *stringT;
 typedef struct tokenNode{
     int data;
+    stringT token;
     struct tokenNode *next;
 }tokenNode, *node;
 extern node p;
@@ -16,12 +21,11 @@ int recursive(){
         cout<<endl;
         cout<<"The recursiveAnalysis result is:"<<endl;
         cout<<"Right"<<endl;
-        cout<<endl;
     }else if(w!='#'){
         cout<<endl;
         cout<<"The recursiveAnalysis result is:"<<endl;
         cout<<"Warning0"<<endl;
-        cout<<endl;
+        wrong=1;
         return 0;
     }
 }
@@ -61,7 +65,7 @@ cout<<"F"<<endl;
             cout<<endl;
             cout<<"The recursiveAnalysis result is:"<<endl;
             cout<<"Warning2"<<endl;
-            cout<<endl;
+            wrong=1;
             return 0;
         }
     }else if(a!=1&&a!=2){
@@ -69,7 +73,7 @@ cout<<"F"<<endl;
         cout<<endl;
         cout<<"The recursiveAnalysis result is:"<<endl;
         cout<<"Warning1"<<endl;
-        cout<<endl;
+        wrong=1;
         return 0;
     }
 }

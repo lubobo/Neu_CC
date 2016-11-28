@@ -5,8 +5,13 @@
 #include <stack>
 #include <map>
 using namespace std;
+extern int wrong;
+typedef struct stringToken{
+    char tokens[15];
+}stringToken, *stringT;
 typedef struct tokenNode{
     int data;
+    stringT token;
     struct tokenNode *next;
 }tokenNode, *node;
 char Nonterminal[5]={'E','F','G','H','I'};
@@ -29,64 +34,64 @@ void analysis(node tokenLists){
     production[6]="";
     production[7]="i";
     production[8]="(E)";
-    stack<char>table;
-    table.push('#');
-    table.push('E');
+    stack<char>tables;
+    tables.push('#');
+    tables.push('E');
     int a,b,c,l;
     a=b=c=l=0;
     char n,q;
     while(tokenLists->data!='#'){
         n=swapToken(tokenLists->data);
         cout<<"初始元素:";
-        cout<<table.top()<<","<<n<<","<<table.size()<<endl;
-        if(table.top()=='i'||table.top()=='w'||table.top()=='x'||table.top()=='('||table.top()==')'||table.top()=='#'){
+        cout<<tables.top()<<","<<n<<","<<tables.size()<<endl;
+        if(tables.top()=='i'||tables.top()=='w'||tables.top()=='x'||tables.top()=='('||tables.top()==')'||tables.top()=='#'){
             for(int t=0;t<5;t++){
-                if(table.top()==Terminal[t]){
+                if(tables.top()==Terminal[t]){
                     q=Terminal[t];
                 }
             }
             if(n==q){
-                table.pop();
+                tables.pop();
                 tokenLists=tokenLists->next;
             }else{
                 break;
             }
         }
-        else if(table.top()=='E'||table.top()=='F'||table.top()=='G'||table.top()=='H'||table.top()=='I'){
+        else if(tables.top()=='E'||tables.top()=='F'||tables.top()=='G'||tables.top()=='H'||tables.top()=='I'){
             for(int f=0;f<5;f++){
                 if(n==Terminal[f]){
                     l=f;
                 }
             }
             for(int j=0;j<=4;j++){
-                if(table.top()==Nonterminal[j]){
+                if(tables.top()==Nonterminal[j]){
                     b=j;
                 }
             }
             c=List[b][l];
             if(c!=0&&c!=3&&c!=6){
-                table.pop();
+                tables.pop();
                 cout<<"栈内个数:";
-                cout<<table.size()<<endl;
+                cout<<tables.size()<<endl;
                 char y;
                 for(int x=production[c].length()-1;x>=0;x--){
                     y=(char)(production[c][x]);
-                    table.push(y);
+                    tables.push(y);
                     cout<<"压栈元素:";
                     cout<<x<<","<<production[c][x]<<endl;
                 }
                 cout<<"栈内个数:";
-                cout<<table.size()<<endl;
+                cout<<tables.size()<<endl;
                 cout<<endl;
             }else{
                 cout<<"压栈为空*"<<endl;
-                table.pop();
+                tables.pop();
             }
         }else{
             break;
         }
     }
-    if(swapToken(tokenLists->data)=='#'&&table.top()=='#'){
+    if(swapToken(tokenLists->data)=='#'&&tables.top()=='#'){
         cout<<endl;
         cout<<"The grammarAnalysis result is:"<<endl;
         cout<<"Right"<<endl;
@@ -96,6 +101,7 @@ void analysis(node tokenLists){
         cout<<"The grammarAnalysis result is:"<<endl;
         cout<<"Warning"<<endl;
         cout<<endl;
+        wrong=1;
     }
 }
 char swapToken(int x){

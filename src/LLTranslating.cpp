@@ -13,7 +13,7 @@ typedef struct tokenNode{
     stringT token;
     struct tokenNode *next;
 }tokenNode, *node;
-extern node p;
+extern node p1;
 char Nonter[5]={'E','F','T','H','G'};
 int lists[5][8]={
     {1,0,0,0,0,1,0,0},
@@ -47,9 +47,9 @@ void LLTranslating(){
     table.push('E');
     int y;
     char ter;
-    ter=swapKey(p->data);
+    ter=swapKey(p1->data);
     while(ter!='#'){
-        ter=swapKey(p->data);
+        ter=swapKey(p1->data);
         if(table.top()=='E'||table.top()=='F'||table.top()=='T'||table.top()=='H'||table.top()=='G'){
             for(int a=0;a<5;a++){
                 if(Nonter[a]==table.top()){
@@ -88,10 +88,10 @@ void LLTranslating(){
             x++;
             table.pop();
         }else if(table.top()=='0'){
-            sem.push((string)(p->token->tokens));
+            sem.push((string)(p1->token->tokens));
             table.pop();
         }else if(table.top()==ter){
-            p=p->next;
+            p1=p1->next;
             table.pop();
         }else{
             break;

@@ -5,6 +5,6 @@
 #include <fstream>
 #include <stdlib.h>
 using namespace std;
-extern node p;
+extern node p1;
 void LLTranslating();
 #endif

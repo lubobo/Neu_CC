@@ -5,5 +5,6 @@
 #include <fstream>
 #include <stdlib.h>
 using namespace std;
+extern int wrong;
 void analysis(node tokenLists);
 #endif

@@ -9,6 +9,9 @@
 #include "../headers/reTranslating.h"
 using namespace std;
 node p;
+node p1;
+node p2;
+int wrong=0;
 int main(){
     fstream testFile;
     int i=0;
@@ -35,17 +38,23 @@ int main(){
     tokenList=listHead;
     /**************************词法分析调用模块************************/
     node token_list=getToken(pHead->pNext,tokenList);
+    p=token_list;
+    p1=token_list;
+    p2=token_list;
     /**************************语法分析调用模块************************/
     /***********LL(1)分析方法*********/
-    //analysis(token_list);
+    analysis(token_list);
     /***********递归下降子程序*********/
-    p=token_list;
-    //recursive();
+    recursive();
     /**************************语义分析调用模块************************/
     /***********LL(1)分析方法*********/
-    LLTranslating();
+    if(wrong!=1){
+        LLTranslating();
+    }
     /***********递归下降子程序*********/
-    //reTranslating();
+    if(wrong!=1){
+        reTranslating();
+    }
     /**************************Token序列*****************************/
     cout<<endl;
     cout<<"识别的序列:"<<endl;

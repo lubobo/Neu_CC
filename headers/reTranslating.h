@@ -5,6 +5,6 @@
 #include <fstream>
 #include <stdlib.h>
 using namespace std;
-extern node p;
+extern node p2;
 void reTranslating();
 #endif

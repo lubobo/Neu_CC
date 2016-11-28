@@ -13,17 +13,18 @@ typedef struct tokenNode{
     stringT token;
     struct tokenNode *next;
 }tokenNode, *node;
-extern node p;
+extern node p2;
 stack<string>semz;
 char y='1';
+int f=0;
 void reTranslating(){
     void Next();
     void E1();
     E1();
-    if(p->token->tokens[0]=='#'){
+    if(p2->token->tokens[0]=='#'&&f!=1){
         cout<<"Success!!!"<<endl;
     }else{
-        cout<<"Wrong!!!"<<endl;
+        cout<<"Wrong0!!!"<<endl;
     }
 }
 void E1(){
@@ -40,13 +41,13 @@ void E2(){
     void T1();
     void GEQAdd();
     void GEQSub();
-    if(p->token->tokens[0]=='+'){
+    if(p2->token->tokens[0]=='+'){
         Next();
         T1();
         GEQAdd();
         y++;
         E2();
-    }else if(p->token->tokens[0]=='-'){
+    }else if(p2->token->tokens[0]=='-'){
         Next();
         T1();
         GEQSub();
@@ -68,13 +69,13 @@ void T2(){
     void F1();
     void GEQMul();
     void GEQDiv();
-    if(p->token->tokens[0]=='*'){
+    if(p2->token->tokens[0]=='*'){
         Next();
         F1();
         GEQMul();
         y++;
         T2();
-    }else if(p->token->tokens[0]=='/'){
+    }else if(p2->token->tokens[0]=='/'){
         Next();
         F1();
         GEQDiv();
@@ -85,27 +86,30 @@ void T2(){
 void F1(){
     void Next();
     void E1();
-    if(p->data==0||p->data==3){
-        semz.push((string)(p->token->tokens));
+    if(p2->data==0||p2->data==3){
+        semz.push((string)(p2->token->tokens));
         Next();
-    }else if((string)(p->token->tokens)=="("){
+    }else if((string)(p2->token->tokens)=="("){
         Next();
         E1();
-        if((string)(p->token->tokens)==")"){
+        if((string)(p2->token->tokens)==")"){
             Next();
         }else{
+            f=1;
             cout<<"Wrong2!!!"<<endl;
         }
     }else{
+        f=1;
         cout<<"Wrong1!!!"<<endl;
     }
 }
 
 void Next(){
-    p=p->next;
+    p2=p2->next;
 }
 
 void GEQAdd(){
+    if(f!=1){
     string n=semz.top();
     semz.pop();
     string m=semz.top();
@@ -113,8 +117,10 @@ void GEQAdd(){
     cout<<'('<<'+'<<'\t'<<m<<'\t'<<n<<'\t'<<"t"<<y<<')'<<endl;
     char t[3]={'t',y,'\0'};
     semz.push((string)(t));
+    }
 }
 void GEQSub(){
+    if(f!=1){
     string n=semz.top();
     semz.pop();
     string m=semz.top();
@@ -122,8 +128,10 @@ void GEQSub(){
     cout<<'('<<'-'<<'\t'<<m<<'\t'<<n<<'\t'<<"t"<<y<<')'<<endl;
     char t[3]={'t',y,'\0'};
     semz.push((string)(t));
+    }
 }
 void GEQMul(){
+    if(f!=1){
     string n=semz.top();
     semz.pop();
     string m=semz.top();
@@ -131,8 +139,10 @@ void GEQMul(){
     cout<<'('<<'*'<<'\t'<<m<<'\t'<<n<<'\t'<<"t"<<y<<')'<<endl;
     char t[3]={'t',y,'\0'};
     semz.push((string)(t));
+    }
 }
 void GEQDiv(){
+    if(f!=1){
     string n=semz.top();
     semz.pop();
     string m=semz.top();
@@ -140,4 +150,5 @@ void GEQDiv(){
     cout<<'('<<'/'<<'\t'<<m<<'\t'<<n<<'\t'<<"t"<<y<<')'<<endl;
     char t[3]={'t',y,'\0'};
     semz.push((string)(t));
+    }
 }
