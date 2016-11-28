@@ -22,7 +22,8 @@ void reTranslating(){
     void E1();
     E1();
     if(p2->token->tokens[0]=='#'&&f!=1){
-        cout<<"Success!!!"<<endl;
+        //cout<<"Success!!!"<<endl;
+        cout<<endl;
     }else{
         cout<<"Wrong0!!!"<<endl;
     }

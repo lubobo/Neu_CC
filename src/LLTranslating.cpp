@@ -98,7 +98,8 @@ void LLTranslating(){
         }
     }
     if(ter=='#'){
-        cout<<"Success!!!"<<endl;
+        //cout<<"Success!!!"<<endl;
+        cout<<endl;
     }else{
         cout<<"Wrong!!!"<<endl;
     }

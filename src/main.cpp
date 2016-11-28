@@ -62,5 +62,6 @@ int main(){
         cout<<token_list->token->tokens;
         token_list=token_list->next;
     }
+    cout<<endl;
     return 0;
 }
