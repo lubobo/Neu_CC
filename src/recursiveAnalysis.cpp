@@ -21,6 +21,7 @@ int recursive(){
         cout<<endl;
         cout<<"The recursiveAnalysis result is:"<<endl;
         cout<<"Right"<<endl;
+        cout<<endl;
     }else if(w!='#'){
         cout<<endl;
         cout<<"The recursiveAnalysis result is:"<<endl;
